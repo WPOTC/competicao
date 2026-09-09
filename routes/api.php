@@ -8,9 +8,18 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::get('/competitor', [App\Http\Controllers\CompetitorController::class, 'index']);
-Route::get('/trainer', [App\Http\Controllers\TrainerController::class, 'index']);
-Route::get('/location', [App\Http\Controllers\LocationController::class, 'index']);
-Route::get('/modality', [App\Http\Controllers\ModalityController::class, 'index']);
-Route::get('/classification', [App\Http\Controllers\ClassificationController::class, 'index']);
+//Route::get('/competitor', [App\Http\Controllers\CompetitorController::class, 'index']);
+//Route::get('/trainer', [App\Http\Controllers\TrainerController::class, 'index']);
+//Route::get('/location', [App\Http\Controllers\LocationController::class, 'index']);
+//Route::get('/modality', [App\Http\Controllers\ModalityController::class, 'index']);
+//Route::get('/classification', [App\Http\Controllers\ClassificationController::class, 'index']);
+
+
+Route::apiResources([
+    'classification' => App\Http\Controllers\ClassificationController::class,
+    'competitor' => App\Http\Controllers\CompetitorController::class,
+    'location' => App\Http\Controllers\LocationController::class,
+    'modality' => App\Http\Controllers\ModalityController::class,
+    'trainer' => App\Http\Controllers\TrainerController::class
+]);
 
